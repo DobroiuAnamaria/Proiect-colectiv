@@ -1,0 +1,320 @@
+body{
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+#icon{
+
+}
+
+#all-body{
+    width: 100%;
+}
+
+#header-section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+    margin-top: 7px;
+    margin-right: 100px;
+}
+
+#picture-header-section{
+    display: flex;
+    align-items: center;
+
+}
+
+#namePage{
+    cursor: pointer;
+    font-size: 65px;
+    font-family: "Century Gothic";
+    font-weight: lighter;
+}
+
+#left-section,#right-section{
+    margin-left: 60px;
+    margin-top: 50px;
+    font-family: "Century Gothic";
+}
+
+#right-section{
+    align-content: space-between;
+    display: grid;
+    align-items: center;
+}
+
+#loginUser,#password,#firstName,#lastName, #birthday, #phoneNumber,#address, #email{
+    padding: 10px 5px;
+}
+#password{
+    margin-top: 10px;
+}
+
+#save, #save2{
+    margin-top: 10px;
+    padding: 3px 20px;
+    border-color: #767676;
+    border-style: groove;
+    cursor:pointer;
+    background-color: #767676;
+}
+
+#EditAndSave-left, #EditAndSave-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#userPageInfo-section{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+#write-FirstName, #write-LastName, #write-Login, #write-Password, #write-Birthday,#write-address,#write-Email,#write-PhoneNumber{
+    padding: 3px 3px;
+}
+
+#right-section{
+    margin-left: 25%;
+}
+
+#header-section-Left{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+#middle-section{
+    font-family: "Century Gothic";
+    font-weight: lighter;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+
+.nav {
+    position: relative;
+    max-width: 400px;
+    min-height: 60px;
+    margin-left: auto;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.28));
+}
+
+
+.toggleNotifications {
+    position: relative;
+    display: inline-flex;
+    float: right;
+    height: 58px;
+    width: 70px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.toggleNotifications .show {
+    flex: 1;
+    margin: auto;
+    height: 40px;
+    max-width: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    transition: all 0.2s;
+}
+.toggleNotifications .show:hover {
+    background: black;
+    cursor: pointer;
+}
+.toggleNotifications .show i {
+    line-height: 38px;
+}
+
+.count {
+    position: absolute;
+    top: 5px;
+    right: 26px;
+}
+.count .num {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #f22;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 17px;
+    font-size: 11px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.notifications {
+    position: absolute;
+    top: 52px;
+    right: 24px;
+    width: 300px;
+    background: #465;
+    border: 1px solid #455;
+    border-radius: 2px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+.notifications:after {
+    content: " ";
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    width: 0px;
+    height: 10px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid #465;
+    pointer-events: none;
+}
+.notifications:before {
+    content: " ";
+    position: absolute;
+    top: -21px;
+    right: 0px;
+    width: 0px;
+    height: 10px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid #455;
+    pointer-events: none;
+}
+.notifications .btnbar {
+    position: relative;
+    height: 60px;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5));
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.notifications .btnbar .text {
+    line-height: 60px;
+    padding: 0px 20px;
+    position: absolute;
+    top: 0px;
+    transition: all 1s;
+}
+.notifications .btnbar .text.empty {
+    opacity: 0;
+}
+.notifications .btnbar .delete {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 75, 50, 0.75);
+    border-radius: 50%;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+.notifications .btnbar .delete i {
+    line-height: 38px;
+    font-size: 18px;
+    transition: all 1s;
+    position: absolute;
+    top: -1px;
+    left: 9px;
+}
+.notifications .btnbar .delete i.empty {
+    opacity: 0;
+}
+.notifications .btnbar .delete:hover {
+    background: rgba(255, 75, 50, 0.95);
+    cursor: pointer;
+}
+.notifications .note {
+    padding: 0px 20px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    overflow: hidden;
+    max-height: 40px;
+}
+.notifications .note:first-of-type {
+    margin-top: 0px;
+}
+.notifications .note.read {
+    color: #CDCDCD;
+}
+.notifications .note:hover {
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.notifications .note i {
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+    vertical-align: middle;
+    color: white;
+}
+
+#navtoggle {
+    display: none;
+}
+#navtoggle:checked ~ .toggleNotifications .notifications {
+    opacity: 0;
+}
+
+#deletetoggle {
+    display: none;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .groupofnotes .note {
+    max-height: 0px;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .groupofnotes .note:nth-of-type(1) {
+    transition-delay: 0.2s;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .groupofnotes .note:nth-of-type(2) {
+    transition-delay: 0.4s;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .groupofnotes .note:nth-of-type(3) {
+    transition-delay: 0.6s;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .groupofnotes .note:nth-of-type(4) {
+    transition-delay: 0.8s;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .btnbar .delete {
+    transition-delay: 1s;
+    background: #465;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .btnbar .full {
+    opacity: 0;
+}
+#deletetoggle:checked ~ .toggleNotifications .notifications .btnbar .empty {
+    opacity: 1;
+    transition-delay: 1s;
+}
+#deletetoggle:checked ~ .toggleNotifications .count .num {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+#deletetoggle:checked ~ .toggleNotifications .count .num:nth-of-type(4) {
+    transition-delay: 0.25s;
+}
+#deletetoggle:checked ~ .toggleNotifications .count .num:nth-of-type(3) {
+    transition-delay: 0.3333333333s;
+}
+#deletetoggle:checked ~ .toggleNotifications .count .num:nth-of-type(2) {
+    transition-delay: 0.5s;
+}
+#deletetoggle:checked ~ .toggleNotifications .count .num:nth-of-type(1) {
+    transition-delay: 1s;
+}
