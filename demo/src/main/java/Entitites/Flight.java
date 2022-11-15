@@ -22,51 +22,86 @@ public class Flight{
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     private UUID ID;
-    @Getter @Setter
-    private String destination; //oras
+
+    public UUID getID() {
+        return ID;
+    }
+
+    public void setID(UUID ID) {
+        this.ID = ID;
+    }
+
     @Getter @Setter
     private String departure; //oras
     @Getter @Setter
-    private String dateDeparture;
+    private String arrival; //oras
     @Getter @Setter
-    private String timeDeparture;
+    private String depDate;
     @Getter @Setter
-    private String airport;
+    private String arrDate;
     @Getter @Setter
-    private int numberOfPlace;
+    private String depTime;
+    @Getter @Setter
+    private String arrTime;
+    @Getter @Setter
+    private String depAirport;
+    @Getter @Setter
+    private String arrAirport;
+    @Getter @Setter
+    private String duration;
+    @Getter @Setter
+    private String airline;
+    @Getter @Setter
+    private int totalSits;
+    @Getter @Setter
+    private int availableSits;
+    @Getter @Setter
+    private int price;
 
-    public Flight(String destination, String arrival, String dateDeparture, String timeDeparture, String airport, int numberOfPlace) {
-        this.destination = destination;
-        this.departure = arrival;
-        this.dateDeparture = dateDeparture;
-        this.timeDeparture = timeDeparture;
-        this.airport = airport;
-        this.numberOfPlace = numberOfPlace;
+    public Flight(String departure, String arrival, String depDate, String arrDate, String depTime, String arrTime, String depAirport, String arrAirport, String duration, String airline, int totalSits, int availableSits, int price) {
+        this.departure = departure;
+        this.arrival = arrival;
+        this.depDate = depDate;
+        this.arrDate = arrDate;
+        this.depTime = depTime;
+        this.arrTime = arrTime;
+        this.depAirport = depAirport;
+        this.arrAirport = arrAirport;
+        this.duration = duration;
+        this.airline = airline;
+        this.totalSits = totalSits;
+        this.availableSits = availableSits;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "The flight's dates:" +
-                "Departure: " + destination + " " +
-                "| Arrival: " + departure + '\n' +
-                "| Date of departure: " + dateDeparture + " " +
-                "| Time of departure: " + timeDeparture + " " +
-                "| Airport: " + airport + '\n' +
-                "| Number of place :" + numberOfPlace +
+        return "Flight{" +
+                "departure='" + departure + '\'' +
+                ", arrival='" + arrival + '\'' +
+                ", depDate='" + depDate + '\'' +
+                ", arrDate='" + arrDate + '\'' +
+                ", depTime='" + depTime + '\'' +
+                ", arrTime='" + arrTime + '\'' +
+                ", depAirport='" + depAirport + '\'' +
+                ", arrAirport='" + arrAirport + '\'' +
+                ", duration='" + duration + '\'' +
+                ", airline='" + airline + '\'' +
+                ", totalSits=" + totalSits +
+                ", availableSits=" + availableSits +
+                ", price=" + price +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Flight flight = (Flight) o;
-        return numberOfPlace == flight.numberOfPlace && Objects.equals(destination, flight.destination) && Objects.equals(departure, flight.departure) && Objects.equals(dateDeparture, flight.dateDeparture) && Objects.equals(timeDeparture, flight.timeDeparture) && Objects.equals(airport, flight.airport);
+        if (!(o instanceof Flight flight)) return false;
+        return getTotalSits() == flight.getTotalSits() && getAvailableSits() == flight.getAvailableSits() && getPrice() == flight.getPrice() && Objects.equals(getDeparture(), flight.getDeparture()) && Objects.equals(getArrival(), flight.getArrival()) && Objects.equals(getDepDate(), flight.getDepDate()) && Objects.equals(getArrDate(), flight.getArrDate()) && Objects.equals(getDepTime(), flight.getDepTime()) && Objects.equals(getArrTime(), flight.getArrTime()) && Objects.equals(getDepAirport(), flight.getDepAirport()) && Objects.equals(getArrAirport(), flight.getArrAirport()) && Objects.equals(getDuration(), flight.getDuration()) && Objects.equals(getAirline(), flight.getAirline());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(destination, departure, dateDeparture, timeDeparture, airport, numberOfPlace);
+        return Objects.hash(getDeparture(), getArrival(), getDepDate(), getArrDate(), getDepTime(), getArrTime(), getDepAirport(), getArrAirport(), getDuration(), getAirline(), getTotalSits(), getAvailableSits(), getPrice());
     }
-
 }

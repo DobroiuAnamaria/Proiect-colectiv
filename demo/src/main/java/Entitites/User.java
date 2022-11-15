@@ -14,35 +14,50 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Client {
+public class User {
     @Getter @Id @Setter @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     private UUID ID;
+
+    public UUID getID() {
+        return ID;
+    }
+
+    public void setID(UUID ID) {
+        this.ID = ID;
+    }
+
     @Getter
     @Setter
-    private String mail; //adresa de mail
+    private String lastName;
+
+    @Getter
+    @Setter
+    private String firstName;
+    @Getter
+    @Setter
+    private String email; //adresa de mail
     @Getter
     @Setter
     private String password; // parola de logare
-    @Getter
-    @Setter
-    private String nameClient; //nume fam + prenume
+
+    public User(String lastName, String firstName, String email, String password) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
+    }
 
     @Override
     public String toString() {
-        return "Client{" +
-                "username='" + mail + '\'' +
+        return "User{" +
+                "lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", NameClient='" + nameClient + '\'' +
-
                 '}';
-    }
-    public Client(String username, String password, String nameClient) {
-        this.mail = username;
-        this.password = password;
-        this.nameClient = nameClient;
     }
 }

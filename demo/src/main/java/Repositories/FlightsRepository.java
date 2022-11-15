@@ -1,6 +1,5 @@
 package Repositories;
 
-import Entitites.Client;
 import Entitites.Flight;
 import org.springframework.data.jpa.repository.JpaRepository;
 
