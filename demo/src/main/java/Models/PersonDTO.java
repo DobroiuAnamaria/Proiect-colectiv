@@ -1,5 +1,6 @@
 package Models;
 
+
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -10,7 +11,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReservationDTO {
+public class PersonDTO {
     @Getter
     @Id
     @Setter
@@ -20,11 +21,13 @@ public class ReservationDTO {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     private UUID ID;
-    @Getter @Setter
-    private String id_flight;
-    @Getter @Setter
-    private String id_user;
-    @Getter @Setter
-    private String id_person;
 
+    @Getter @Setter
+    private String lastName;
+
+    @Getter @Setter
+    private String firstName;
+
+    @Getter @Setter
+    private String luggageType;
 }

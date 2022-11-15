@@ -9,17 +9,19 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Reservation{
+public class Person {
     @Getter @Id @Setter @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
+
     private UUID ID;
 
     public UUID getID() {
@@ -31,18 +33,26 @@ public class Reservation{
     }
 
     @Getter @Setter
-    private String id_flight;
+    private String lastName;
+
     @Getter @Setter
-    private String id_user;
+    private String firstName;
+
     @Getter @Setter
-    private String id_person;
+    private String luggageType;
+
+    public Person(String lastName, String firstName, String luggageType) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.luggageType = luggageType;
+    }
 
     @Override
     public String toString() {
-        return "Reservation{" +
-                "id_flight='" + id_flight + '\'' +
-                ", id_user='" + id_user + '\'' +
-                ", id_person='" + id_person + '\'' +
+        return "Person{" +
+                "last Name='" + lastName + '\'' +
+                ", first Name='" + firstName + '\'' +
+                ", luggage Type='" + luggageType + '\'' +
                 '}';
     }
 }

@@ -18,16 +18,30 @@ public class FlightDTO {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     private UUID ID;
-    @Getter
-    @Setter
-    private String destination; //oras
     @Getter @Setter
     private String departure; //oras
     @Getter @Setter
-    private String dateDeparture;
+    private String arrival; //oras
     @Getter @Setter
-    private String timeDeparture;
+    private String depDate;
     @Getter @Setter
-    private String airport;
-
+    private String arrDate;
+    @Getter @Setter
+    private String depTime;
+    @Getter @Setter
+    private String arrTime;
+    @Getter @Setter
+    private String depAirport;
+    @Getter @Setter
+    private String arrAirport;
+    @Getter @Setter
+    private String duration;
+    @Getter @Setter
+    private String airline;
+    @Getter @Setter
+    private int totalSits;
+    @Getter @Setter
+    private int availableSits;
+    @Getter @Setter
+    private int prince;
 }
