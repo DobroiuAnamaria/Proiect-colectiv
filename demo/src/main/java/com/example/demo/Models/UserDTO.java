@@ -1,20 +1,16 @@
-package Entitites;
+package com.example.demo.Models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.UUID;
 
-@Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Client {
+public class UserDTO {
     @Getter @Id @Setter @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
@@ -27,22 +23,17 @@ public class Client {
     @Getter
     @Setter
     private String password; // parola de logare
-    @Getter
-    @Setter
-    private String nameClient; //nume fam + prenume
 
     @Override
     public String toString() {
-        return "Client{" +
-                "username='" + mail + '\'' +
+        return "ClientDTO{" +
+                "mail='" + mail + '\'' +
                 ", password='" + password + '\'' +
-                ", NameClient='" + nameClient + '\'' +
-
                 '}';
     }
-    public Client(String username, String password, String nameClient) {
-        this.mail = username;
+
+    public UserDTO(String mail, String password) {
+        this.mail = mail;
         this.password = password;
-        this.nameClient = nameClient;
     }
 }

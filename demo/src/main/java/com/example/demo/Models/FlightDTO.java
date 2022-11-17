@@ -1,4 +1,4 @@
-package Models;
+package com.example.demo.Models;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class FlightDTO {
     @Getter @Id @Setter @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -30,4 +29,11 @@ public class FlightDTO {
     @Getter @Setter
     private String airport;
 
+    public FlightDTO(String destination, String departure, String dateDeparture, String timeDeparture, String airport) {
+        this.destination = destination;
+        this.departure = departure;
+        this.dateDeparture = dateDeparture;
+        this.timeDeparture = timeDeparture;
+        this.airport = airport;
+    }
 }

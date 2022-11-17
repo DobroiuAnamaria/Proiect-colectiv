@@ -1,20 +1,16 @@
-package Entitites;
+package com.example.demo.Entitites;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
-
 @Entity
+@Table(name="Flights")
 @NoArgsConstructor
-@AllArgsConstructor
 public class Flight{
     @Getter @Id @Setter @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -23,27 +19,23 @@ public class Flight{
     )
     private UUID ID;
     @Getter @Setter
+    @Column(name="Destination")
     private String destination; //oras
     @Getter @Setter
+    @Column(name="Departure")
     private String departure; //oras
     @Getter @Setter
+    @Column(name="Date of Departure")
     private String dateDeparture;
     @Getter @Setter
+    @Column(name="Time of Departure")
     private String timeDeparture;
     @Getter @Setter
+    @Column(name="Airport")
     private String airport;
     @Getter @Setter
-    private int numberOfPlace;
-
-    public Flight(String destination, String arrival, String dateDeparture, String timeDeparture, String airport, int numberOfPlace) {
-        this.destination = destination;
-        this.departure = arrival;
-        this.dateDeparture = dateDeparture;
-        this.timeDeparture = timeDeparture;
-        this.airport = airport;
-        this.numberOfPlace = numberOfPlace;
-    }
-
+    @Column(name="Number of Place")
+    private String numberOfPlace;
     @Override
     public String toString() {
         return "The flight's dates:" +
@@ -69,4 +61,22 @@ public class Flight{
         return Objects.hash(destination, departure, dateDeparture, timeDeparture, airport, numberOfPlace);
     }
 
+    public Flight(String destination, String departure, String dateDeparture, String timeDeparture, String airport, String numberOfPlace) {
+        this.destination = destination;
+        this.departure = departure;
+        this.dateDeparture = dateDeparture;
+        this.timeDeparture = timeDeparture;
+        this.airport = airport;
+        this.numberOfPlace = numberOfPlace;
+    }
+
+    public Flight(UUID ID, String destination, String departure, String dateDeparture, String timeDeparture, String airport, String numberOfPlace) {
+        this.ID = ID;
+        this.destination = destination;
+        this.departure = departure;
+        this.dateDeparture = dateDeparture;
+        this.timeDeparture = timeDeparture;
+        this.airport = airport;
+        this.numberOfPlace = numberOfPlace;
+    }
 }

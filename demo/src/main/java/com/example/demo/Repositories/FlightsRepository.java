@@ -1,10 +1,10 @@
-package Repositories;
+package com.example.demo.Repositories;
 
-import Entitites.Client;
-import Entitites.Flight;
+import com.example.demo.Entitites.Flight;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
-
+@Repository
 public interface FlightsRepository extends JpaRepository<Flight, UUID> {
 }
