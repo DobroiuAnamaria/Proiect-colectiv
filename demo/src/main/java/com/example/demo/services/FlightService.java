@@ -1,7 +1,7 @@
-package com.example.demo.Services;
+package com.example.demo.services;
 
-import com.example.demo.Entitites.Flight;
-import com.example.demo.Repositories.FlightsRepository;
+import com.example.demo.entitites.Flight;
+import com.example.demo.repositories.FlightsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

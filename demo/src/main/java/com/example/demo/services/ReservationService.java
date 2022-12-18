@@ -1,8 +1,8 @@
-package com.example.demo.Services;
+package com.example.demo.services;
 
 
-import com.example.demo.Entitites.Reservation;
-import com.example.demo.Repositories.ReservationsRepository;
+import com.example.demo.entitites.Reservation;
+import com.example.demo.repositories.ReservationsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

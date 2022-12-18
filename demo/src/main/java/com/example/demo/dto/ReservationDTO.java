@@ -1,4 +1,4 @@
-package com.example.demo.Models;
+package com.example.demo.dto;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;

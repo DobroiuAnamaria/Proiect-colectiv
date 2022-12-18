@@ -1,14 +1,16 @@
-package com.example.demo.Controller;
-
-import com.example.demo.Entitites.User;
-import com.example.demo.Entitites.UserInfo;
-import com.example.demo.Services.UserService;
+package com.example.demo.controller;
+import com.example.demo.entitites.User;
+import com.example.demo.entitites.UserInfo;
+import com.example.demo.services.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.UUID;
+
 @RequestMapping(path = "/api/users/")
 @RestController
+@Api(tags = "User controller")
 public class UserController {
     private UserService userService;
 
@@ -34,6 +36,7 @@ public class UserController {
         userService.updateUser(newUser,ID);
     }
     @GetMapping
+    @ApiOperation(nickname = "getUsers", value = "returns users ")
     public List<User> getAllUsers(){
         return userService.getAll();
     }

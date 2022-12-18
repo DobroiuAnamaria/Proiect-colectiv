@@ -1,8 +1,8 @@
-package com.example.demo.Services;
+package com.example.demo.services;
 
-import com.example.demo.Entitites.User;
-import com.example.demo.Entitites.UserInfo;
-import com.example.demo.Repositories.UserRepository;
+import com.example.demo.entitites.User;
+import com.example.demo.entitites.UserInfo;
+import com.example.demo.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

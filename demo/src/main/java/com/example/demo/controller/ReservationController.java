@@ -1,13 +1,16 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
-import com.example.demo.Entitites.Reservation;
-import com.example.demo.Services.ReservationService;
+import com.example.demo.entitites.Reservation;
+import com.example.demo.services.ReservationService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 @RequestMapping(path = "/api/reservations/")
 @RestController
+@Api(tags = "Reservation controller")
 public class ReservationController {
     private ReservationService reservationService;
 
@@ -29,6 +32,7 @@ public class ReservationController {
         reservationService.updateReservation(newReservation,ID);
     }
     @GetMapping
+    @ApiOperation(nickname = "getReservations", value = "returns reservations ")
     public List<Reservation> getAllReservations(){
         return reservationService.getAll();
     }
