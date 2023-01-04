@@ -19,16 +19,16 @@ public class ReservationController {
     }
 
     @PostMapping
-    public void addReservation(@RequestAttribute UUID id_flight, @RequestAttribute UUID id_client,
-                          @RequestAttribute int numberOfPlace, @RequestAttribute String touristName){
+    public void addReservation(@RequestParam UUID id_flight, @RequestParam UUID id_client,
+                          @RequestParam int numberOfPlace, @RequestParam String touristName){
         reservationService.addReservation(id_flight,id_client,numberOfPlace,touristName);
     }
     @DeleteMapping
-    public void deleteReservation(@RequestAttribute UUID ID){
+    public void deleteReservation(@RequestParam UUID ID){
         reservationService.deleteReservation(ID);
     }
     @PutMapping
-    public void updateReservation(@RequestBody Reservation newReservation, @RequestAttribute UUID ID){
+    public void updateReservation(@RequestBody Reservation newReservation, @RequestParam UUID ID){
         reservationService.updateReservation(newReservation,ID);
     }
     @GetMapping

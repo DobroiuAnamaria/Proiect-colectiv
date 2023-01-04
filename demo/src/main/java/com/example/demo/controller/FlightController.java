@@ -19,17 +19,17 @@ public class FlightController {
     }
 
     @PostMapping
-    public void addFlight(@RequestAttribute String destination,@RequestAttribute String departure,
-                          @RequestAttribute String dateOfDeparture,@RequestAttribute String timeOfDeparture,
-                          @RequestAttribute String airport,@RequestAttribute String numberOfPlace){
+    public void addFlight(@RequestParam String destination,@RequestParam String departure,
+                          @RequestParam String dateOfDeparture,@RequestParam String timeOfDeparture,
+                          @RequestParam String airport,@RequestParam String numberOfPlace){
         flightService.addFlight(destination,departure,dateOfDeparture,timeOfDeparture,airport,numberOfPlace);
     }
     @DeleteMapping
-    public void deleteFlight(@RequestAttribute UUID ID){
+    public void deleteFlight(@RequestParam UUID ID){
         flightService.deleteFlight(ID);
     }
     @PutMapping
-    public void updateFlight(@RequestBody Flight newFlight,@RequestAttribute UUID ID){
+    public void updateFlight(@RequestBody Flight newFlight,@RequestParam UUID ID){
         flightService.updateFlight(newFlight,ID);
     }
     @GetMapping

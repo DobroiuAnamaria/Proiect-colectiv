@@ -19,8 +19,8 @@ public class UserController {
     }
 
     @PostMapping
-    public void addUser(@RequestAttribute String mail, @RequestAttribute String password,
-                        @RequestAttribute String username, @RequestBody UserInfo userInfo){
+    public void addUser(@RequestParam String mail, @RequestParam String password,
+                        @RequestParam String username, @RequestBody UserInfo userInfo){
         String firstName = userInfo.getFirstName();
         String lastName = userInfo.getLastName();
         String dateOfBirth = userInfo.getDateOfBirth();
@@ -28,11 +28,11 @@ public class UserController {
         userService.addUser(mail,password,username,firstName,lastName,dateOfBirth,phoneNumber);
     }
     @DeleteMapping
-    public void deleteUser(@RequestAttribute UUID ID){
+    public void deleteUser(@RequestParam UUID ID){
         userService.deleteUser(ID);
     }
     @PutMapping
-    public void updateUser(@RequestBody User newUser, @RequestAttribute UUID ID){
+    public void updateUser(@RequestBody User newUser, @RequestParam UUID ID){
         userService.updateUser(newUser,ID);
     }
     @GetMapping
