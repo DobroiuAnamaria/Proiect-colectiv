@@ -4,7 +4,10 @@ import com.example.demo.entitites.User;
 import com.example.demo.repositories.FlightsRepository;
 import com.example.demo.repositories.UserRepository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -67,5 +70,40 @@ public class Validation {
         }
         if (ok != 2) return false;
         return true;
+    }
+    public static boolean isValidTime(String time)
+    {
+        String regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
+
+        Pattern p = Pattern.compile(regex);
+
+        if (time == null) {
+            return false;
+        }
+        Matcher m = p.matcher(time);
+        return m.matches();
+    }
+
+    public static boolean validateJavaDate(String strDate)
+    {
+        if (strDate.trim().equals(""))
+        {
+            return true;
+        }
+        else
+        {
+            SimpleDateFormat sdfrmt = new SimpleDateFormat("dd.MM.yyyy");
+            sdfrmt.setLenient(false);
+
+            try
+            {
+                Date javaDate = sdfrmt.parse(strDate);
+            }
+            catch (ParseException e)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
